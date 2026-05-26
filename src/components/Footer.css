@@ -1,0 +1,277 @@
+/* ===================================================
+   FOOTER
+   =================================================== */
+.Scollo-footer {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: var(--font-body);
+}
+
+/* ── Top Row (CTA + Contact) ── */
+.footer-top-bar {
+  padding: 70px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-brand h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(3.6rem, 5vw, 5.6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.0;
+  margin-bottom: 30px;
+  max-width: 480px;
+}
+
+.footer-brand-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.footer-talk-link {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  color: white;
+  transition: color var(--duration-fast);
+}
+
+.footer-talk-link:hover { color: var(--primary-gold); }
+
+.footer-contact-col {
+  text-align: right;
+}
+
+.footer-contact-col h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 18px;
+}
+
+.footer-contact-col .btn-primary {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* ── Social Icons ── */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--duration-fast),
+              border-color var(--duration-fast),
+              transform var(--duration-fast) var(--easing-bounce);
+  cursor: pointer;
+  color: white;
+}
+
+.social-icon:hover {
+  background-color: var(--primary-gold);
+  border-color: var(--primary-gold);
+  transform: translateY(-3px);
+}
+
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Mid Section (Nav + Subscribe) ── */
+.footer-mid {
+  padding: 70px 0 50px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-mid-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 2fr;
+  gap: 40px;
+}
+
+.footer-nav-col h4 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-nav-list li a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.8);
+  transition: color var(--duration-fast), padding-left var(--duration-fast);
+  display: inline-block;
+}
+
+.footer-nav-list li a:hover {
+  color: var(--primary-gold);
+  padding-left: 6px;
+}
+
+/* ── Subscribe ── */
+.footer-subscribe h4 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.footer-subscribe p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-right: none;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  outline: none;
+  transition: border-color var(--duration-fast), background var(--duration-fast);
+}
+
+.subscribe-form input::placeholder { color: rgba(255,255,255,0.35); }
+
+.subscribe-form input:focus {
+  border-color: var(--primary-gold);
+  background: rgba(255,255,255,0.12);
+}
+
+.subscribe-form button {
+  background-color: var(--primary-gold);
+  border: 1.5px solid var(--primary-gold);
+  color: white;
+  padding: 14px 22px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color var(--duration-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.subscribe-form button:hover { background-color: var(--primary-gold-dark); }
+
+.subscribe-success {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4ade80;
+  padding: 14px 0;
+}
+
+/* ── Bottom Bar ── */
+.footer-bottom {
+  padding: 28px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.45);
+  transition: color var(--duration-fast);
+}
+
+.footer-bottom-links a:hover { color: var(--primary-gold); }
+
+.footer-copyright {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.35);
+  font-family: var(--font-heading);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .footer-top-inner { flex-direction: column; align-items: flex-start; }
+  .footer-contact-col { text-align: left; }
+  .footer-socials { justify-content: flex-start; }
+  .footer-mid-inner { grid-template-columns: 1fr 1fr; gap: 50px; }
+  .footer-subscribe { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .footer-mid-inner { grid-template-columns: 1fr; gap: 40px; }
+  .subscribe-form { flex-direction: column; }
+  .subscribe-form input { border-right: 1.5px solid rgba(255,255,255,0.2); border-bottom: none; }
+  .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
+}
