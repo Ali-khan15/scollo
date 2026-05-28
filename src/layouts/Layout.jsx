@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './Layout.css';
+import { ArrowRightIcon } from '../components/Icons';
 
 /* ── Contact Modal ── */
 const ContactModal = ({ open, onClose }) => {
@@ -58,7 +59,7 @@ const ContactModal = ({ open, onClose }) => {
                 <label htmlFor="c-msg">How Can We Help? *</label>
                 <textarea id="c-msg" rows="5" placeholder="Tell us about your project, timeline, and location..." value={form.message} onChange={e => setForm({...form, message: e.target.value})} required />
               </div>
-              <button type="submit" className="btn-primary" style={{ fontSize: '1.6rem', padding: '1.6rem 4rem' }}>Send Message →</button>
+              <button type="submit" className="btn-primary" style={{ fontSize: '1.6rem', padding: '1.6rem 4rem' }}>Send Message <ArrowRightIcon size={14} /></button>
             </form>
           </>
         )}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Subpages.css';
+import { PhoneIcon, MailIcon, LocationIcon, ClockIcon, CheckCircleIcon, ArrowRightIcon } from '../components/Icons';
 
 const SERVICE_OPTIONS = [
   'Painting',
@@ -54,12 +55,12 @@ const ContactUs = () => {
               <h2>Contact Information</h2>
 
               <div className="contact-item">
-                <h3>📞 Phone</h3>
+                <h3><PhoneIcon size={18} /> Phone</h3>
                 <p><a href="tel:+1XXXXXXXXXX">+1 XXX XXX XXXX</a></p>
               </div>
 
               <div className="contact-item">
-                <h3>✉️ Email</h3>
+                <h3><MailIcon size={18} /> Email</h3>
                 <p>
                   <a href="mailto:info@Scollopaintco.com">
                     info@Scollopaintco.com
@@ -68,12 +69,12 @@ const ContactUs = () => {
               </div>
 
               <div className="contact-item">
-                <h3>📍 Location</h3>
+                <h3><LocationIcon size={18} /> Location</h3>
                 <p>Your City / State Here</p>
               </div>
 
               <div className="contact-item">
-                <h3>🕐 Business Hours</h3>
+                <h3><ClockIcon size={18} /> Business Hours</h3>
                 <p>Monday – Saturday: 8:00 AM – 6:00 PM</p>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', marginTop: '4px' }}>Sunday: Closed</p>
               </div>
@@ -95,7 +96,7 @@ const ContactUs = () => {
 
               {sent ? (
                 <div className="success-msg">
-                  <div style={{ fontSize: '4rem', marginBottom: '16px' }}>✅</div>
+                  <div style={{ marginBottom: '16px', color: 'var(--primary-gold)' }}><CheckCircleIcon size={64} /></div>
                   <h2>Message Sent!</h2>
                   <p>Thank you for reaching out. We'll get back to you shortly.</p>
                 </div>
@@ -177,7 +178,7 @@ const ContactUs = () => {
                   </div>
 
                   <button type="submit" className="btn-primary" style={{ width: '100%', padding: '18px' }}>
-                    Send Request →
+                    Send Request <ArrowRightIcon size={16} />
                   </button>
                 </form>
               )}

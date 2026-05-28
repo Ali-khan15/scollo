@@ -332,6 +332,8 @@
   min-width: 40px;
   line-height: 1.1;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .why-block-body strong {

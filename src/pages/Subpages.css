@@ -904,8 +904,9 @@
 
 .why-check {
   color: var(--primary-gold);
-  font-size: 1.8rem;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .about-list {
@@ -934,7 +935,16 @@
 
 .about-mv-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
 
-.about-mv-icon { font-size: 3.6rem; margin-bottom: 20px; }
+.about-mv-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--primary-gold);
+}
+.about-mv-icon svg { width: 48px; height: 48px; }
 
 .about-mv-card h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 16px; }
 
@@ -1146,6 +1156,9 @@
   color: var(--primary-gold);
   letter-spacing: 0.1em;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .contact-item p, 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Subpages.css';
+import { MissionIcon, VisionIcon, CheckIcon } from '../components/Icons';
 
 const COMMITMENT = [
   'Delivering quality results',
@@ -52,7 +53,7 @@ const About = () => (
       <div className="container">
         <div className="about-mv-grid">
           <div className="about-mv-card">
-            <div className="about-mv-icon">🎯</div>
+            <div className="about-mv-icon"><MissionIcon /></div>
             <h2><span className="grad-text">Our Mission</span></h2>
             <p>
               To provide reliable, high-quality painting and finishing services with professionalism,
@@ -60,7 +61,7 @@ const About = () => (
             </p>
           </div>
           <div className="about-mv-card">
-            <div className="about-mv-icon">🔭</div>
+            <div className="about-mv-icon"><VisionIcon /></div>
             <h2><span className="grad-text">Our Vision</span></h2>
             <p>
               To be recognized as a leading name in painting and finishing services, known for
@@ -78,7 +79,7 @@ const About = () => (
         <h2>We Specialize In</h2>
         <ul className="about-list">
           {SPECIALTIES.map((item, i) => (
-            <li key={i}><span className="why-check">✓</span> {item}</li>
+            <li key={i}><span className="why-check"><CheckIcon size={14} /></span> {item}</li>
           ))}
         </ul>
         <Link to="/our-services" className="btn-primary">View All Services</Link>
@@ -94,7 +95,7 @@ const About = () => (
         <h2>What You Can Always Expect From Us</h2>
         <ul className="about-list">
           {COMMITMENT.map((item, i) => (
-            <li key={i}><span className="why-check">✓</span> {item}</li>
+            <li key={i}><span className="why-check"><CheckIcon size={14} /></span> {item}</li>
           ))}
         </ul>
         <Link to="/contact-us" className="btn-primary">Get in Touch</Link>

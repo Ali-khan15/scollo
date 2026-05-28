@@ -3,6 +3,7 @@ import './Gallery.css';
 import './Subpages.css';
 
 import { TradeIcons } from '../components/TradeIcons';
+import { ArrowLeftIcon, ArrowRightIcon } from '../components/Icons';
 
 /* ── Service sections with curated image assignments ── */
 const SERVICE_SECTIONS = [
@@ -185,7 +186,7 @@ const ServiceSlider = ({ section }) => {
             disabled={total <= VISIBLE}
             aria-label="Previous"
           >
-            ←
+            <ArrowLeftIcon size={18} />
           </button>
           <span className="slider-count">
             {total > 0 ? `${current + 1}–${Math.min(current + VISIBLE, total)} / ${total}` : '0 / 0'}
@@ -196,7 +197,7 @@ const ServiceSlider = ({ section }) => {
             disabled={total <= VISIBLE}
             aria-label="Next"
           >
-            →
+            <ArrowRightIcon size={18} />
           </button>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import { TradeIcons } from '../components/TradeIcons';
+import { HomeIcon, ShieldCheckIcon, ArrowRightIcon } from '../components/Icons';
 import './Home.css';
 
 /* ── Scroll-reveal hook ── */
@@ -82,12 +83,12 @@ const WHY_US = [
     desc: 'Decades of experience across luxury residential, commercial, and government construction projects.',
   },
   {
-    badge: '🏠',
+    badge: <HomeIcon size={22} />,
     title: 'Florida Born & Family Owned',
     desc: 'A local company deeply connected to the Florida community and committed to its growth.',
   },
   {
-    badge: '✓',
+    badge: <ShieldCheckIcon size={22} />,
     title: 'Licensed & Accountable',
     desc: 'State licensed professionals focused on safety, quality, and doing things the right way.',
   },
@@ -198,7 +199,7 @@ const Home = () => {
                 <div className="solving-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <Link to="/our-services" className="learn-link">Learn More →</Link>
+                <Link to="/our-services" className="learn-link">Learn More <ArrowRightIcon size={14} /></Link>
               </div>
             ))}
           </div>
