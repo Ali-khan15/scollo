@@ -8,42 +8,42 @@ const services = [
     title: 'Framing',
     description:
       'Precision metal and wood framing for walls, ceilings, and structural systems — built for strength, speed, and long-term performance.',
-    image: '/images/img_62.jpeg',
+    image: '/images/framing_1.jpeg',
   },
   {
     icon: TradeIcons.finishing,
     title: 'Finishing',
     description:
       'Expert surface finishing including taping, mudding, sanding, and texturing to deliver smooth, paint-ready walls and ceilings.',
-    image: '/images/img_5.jpeg',
+    image: '/images/img_26.jpeg',
   },
   {
     icon: TradeIcons.backing,
     title: 'Backing',
     description:
       'Structural backing and blocking installation to support fixtures, cabinetry, handrails, and other wall-mounted elements.',
-    image: '/images/img_22.jpeg',
+    image: '/images/backing_1.jpeg',
   },
   {
     icon: TradeIcons.sheathing,
     title: 'Sheathing',
     description:
       'Exterior wall and roof sheathing installation using OSB and plywood panels for a strong, weather-resistant building envelope.',
-    image: '/images/img_43.jpeg',
+    image: '/images/sheathing_1.jpeg',
   },
   {
     icon: TradeIcons.trusses,
     title: 'Trusses',
     description:
       'Professional roof and floor truss installation ensuring structural integrity, proper load distribution, and code compliance.',
-    image: '/images/img_63.jpeg',
+    image: '/images/trusses_1.jpeg',
   },
   {
     icon: TradeIcons.stucco,
     title: 'Stucco',
     description:
       'Interior and exterior stucco application delivering durable, textured, and visually appealing finishes for any surface.',
-    image: '/images/img_10.jpeg',
+    image: '/images/stucco_1.jpeg',
   },
   {
     icon: TradeIcons.insulation,
@@ -57,7 +57,7 @@ const services = [
     title: 'Hanging',
     description:
       'Precise drywall hanging and sheetrock installation for residential and commercial projects, ready for finishing.',
-    image: '/images/img_12.jpeg',
+    image: '/images/hanging_1.jpeg',
   },
 ];
 

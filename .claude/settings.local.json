@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Muhammad Ali/**)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\Muhammad Ali\\\\Desktop\\\\scollo\\\\SCOLLO\\\\public\\\\images\\\\\" | Where-Object { $_.Name -match \"^\\(4|5|6|7|8|9|13|22|26|28\\)\\\\.jpe?g$\" } | Select-Object Name | Sort-Object Name)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\Muhammad Ali\\\\Desktop\\\\scollo\\\\SCOLLO\\\\public\\\\images\\\\\" | Where-Object { $_.Name -match \"^\\\\d+\\\\.jpe?g$\" } | Select-Object Name)"
+    ]
+  }
+}
