@@ -29,7 +29,7 @@ const services = [
     title: 'Sheathing',
     description:
       'Exterior wall and roof sheathing installation using OSB and plywood panels for a strong, weather-resistant building envelope.',
-    image: '/images/sheathing_1.jpeg',
+    image: '/images/sheathingservice.png',
   },
   {
     icon: TradeIcons.trusses,
@@ -43,7 +43,7 @@ const services = [
     title: 'Stucco',
     description:
       'Interior and exterior stucco application delivering durable, textured, and visually appealing finishes for any surface.',
-    image: '/images/stucco_1.jpeg',
+    image: '/images/stuccoservice.png',
   },
   {
     icon: TradeIcons.insulation,
