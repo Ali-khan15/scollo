@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import { TradeIcons } from '../components/TradeIcons';
-import { HomeIcon, ShieldCheckIcon, ArrowRightIcon } from '../components/Icons';
+import { HomeIcon, ShieldCheckIcon, ArrowRightIcon, MissionIcon } from '../components/Icons';
 import './Home.css';
 
 /* ── Scroll-reveal hook ── */
@@ -206,7 +206,32 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 6. WHY CHOOSE US ── */}
+      {/* ── 6. TRUST SECTION ── */}
+      <section className="trust-section">
+        <div className="container">
+          <div className="section-header reveal">
+            <span className="eyebrow">Why Choose Us</span>
+            <h2>Why Contractors &amp; Clients Trust <span className="grad-text">Scollo Construction</span></h2>
+          </div>
+          <div className="trust-grid">
+            {[
+              { badge: '20+', title: '20+ Years Experience', desc: 'Serving Florida with proven construction expertise across residential, commercial, and government projects.' },
+              { badge: '🏠', title: 'Family-Owned Business', desc: 'Built on trust, relationships, and community values rooted in over two decades of Florida construction.' },
+              { badge: '✓', title: 'State Licensed', desc: 'Committed to quality, safety, and full accountability on every project we undertake.' },
+              { badge: '↕', title: 'Jacksonville to Miami', desc: 'Serving clients throughout the entire state of Florida with dependable construction services.' },
+              { badge: '12', title: '12-Month Warranty', desc: 'Standing behind every completed project with a full workmanship warranty for peace of mind.' },
+            ].map((item, i) => (
+              <div className="trust-card reveal" key={i}>
+                <span className="trust-card-badge">{item.badge}</span>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. WHY CHOOSE US ── */}
       <section className="home-approach-section">
         <div className="home-approach-image">
           <img src="/images/img_63.jpeg" alt="Scollo Construction team at work in Florida" />
@@ -229,7 +254,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 7. COMMUNITY / FLORIDA CTA ── */}
+      {/* ── 7. FAMILY-ORIENTED SECTION ── */}
+      <section className="family-section reveal">
+        <div className="container">
+          <div className="family-inner">
+            <div className="family-text">
+              <span className="eyebrow">Our Story</span>
+              <h2>Family-Owned. <span className="grad-text">Florida Proud.</span></h2>
+              <p>
+                Scollo Construction is more than a construction company — we are a Florida family
+                with deep roots in the communities we serve.
+              </p>
+              <p>
+                For over 20 years, our family has been committed to helping Florida grow through
+                quality construction, honest business practices, and strong community relationships.
+              </p>
+              <p>
+                We believe that every project deserves the same care, attention, and accountability
+                that we would expect for our own family. Those values guide everything we do —
+                from luxury residential homes to commercial developments and government projects
+                throughout Florida.
+              </p>
+              <Link to="/about" className="btn-primary">Our Story</Link>
+            </div>
+            <div className="family-image">
+              <div className="family-img-placeholder">
+                <span>Family Photo Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. MISSION STATEMENT ── */}
+      <section className="mission-section">
+        <div className="container">
+          <div className="mission-inner reveal">
+            <div className="mission-icon-wrap">
+              <MissionIcon size={48} />
+            </div>
+            <span className="eyebrow">Our Mission</span>
+            <h2>Built on Purpose. <span className="grad-text">Driven by Values.</span></h2>
+            <p className="mission-statement">
+              Our mission is to provide exceptional commercial and residential construction services
+              throughout Florida while building lasting relationships based on trust, accountability,
+              family values, and quality craftsmanship.
+            </p>
+            <p className="mission-sub">
+              We are committed to delivering projects that stand the test of time, supporting the
+              communities we serve, and maintaining the highest standards of professionalism in
+              every project we undertake. As a Florida-born company, we take pride in helping
+              shape the future of our state through responsible construction and long-term
+              community involvement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. COMMUNITY / FLORIDA CTA ── */}
       <section className="community-section">
         <div className="community-bg" style={{ backgroundImage: 'url(/images/img_92.jpeg)' }} />
         <div className="community-overlay" />

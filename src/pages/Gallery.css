@@ -185,14 +185,29 @@
 .gallery-slider-track {
   display: flex;
   gap: 20px;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+  /* transition controlled by JS for accuracy */
 }
 
 /* ── Individual Slide ── */
 .gallery-slide {
-  flex: 0 0 calc((100% - 40px) / 3); /* 3 visible, 2 gaps of 20px */
+  flex: 0 0 calc((100% - 40px) / 3);
   min-width: calc((100% - 40px) / 3);
+}
+
+@media (max-width: 1100px) {
+  .gallery-slide {
+    flex: 0 0 calc((100% - 20px) / 2);
+    min-width: calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+  .gallery-slider-track { gap: 0; }
 }
 
 .gallery-slide-img {
@@ -303,18 +318,16 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
-  .gallery-slide {
-    flex: 0 0 calc((100% - 20px) / 2);
-    min-width: calc((100% - 20px) / 2);
-  }
-}
-
 @media (max-width: 768px) {
   .gallery-section-header {
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 0 16px;
+    gap: 12px;
   }
+
+  .gallery-section-icon { width: 32px; height: 32px; }
+  .gallery-section-text h2 { font-size: 2.4rem; }
+  .gallery-section-text p { font-size: 1.4rem; }
 
   .gallery-slider-controls {
     width: 100%;
@@ -322,7 +335,7 @@
   }
 
   .gallery-slider-viewport {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .gallery-slide {
@@ -330,21 +343,37 @@
     min-width: 100%;
   }
 
+  .gallery-slide-img { height: 240px; }
+
+  .gallery-filter-bar { padding: 12px 0; }
   .gallery-filter-bar .container {
-    gap: 8px;
+    gap: 6px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
   }
 
   .gallery-filter-btn {
     font-size: 1.1rem;
-    padding: 8px 14px;
+    padding: 7px 12px;
+    flex-shrink: 0;
   }
 
   .gallery-service-section {
-    padding: 40px 0;
+    padding: 32px 0;
   }
-  
+
   .section-nav-btn {
-    padding: 10px 20px;
+    padding: 10px 16px;
     font-size: 1.2rem;
   }
+
+  .slider-arrow { width: 36px; height: 36px; font-size: 1.4rem; }
+}
+
+@media (max-width: 480px) {
+  .gallery-slide-img { height: 200px; }
+  .gallery-section-header { padding: 0 16px; }
+  .gallery-slider-viewport { padding: 0 16px; }
 }

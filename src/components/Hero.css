@@ -207,21 +207,27 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-section { padding: 100px 0 80px; }
-  .hero-content h1 { font-size: 4.2rem; margin-bottom: 2.5rem; }
+  .hero-section { padding: 90px 0 80px; min-height: auto; }
+  .hero-content h1 { font-size: 3.8rem; margin-bottom: 2rem; line-height: 1.0; }
+  .hero-content p.hero-sub { font-size: 1.7rem; }
   .hero-buttons { flex-direction: column; gap: 12px; }
-  .hero-buttons .btn-primary { width: 100%; text-align: center; font-size: 1.4rem; padding: 14px 24px; }
+  .hero-buttons .btn-primary,
+  .hero-buttons .hero-contact-btn { width: 100%; text-align: center; font-size: 1.4rem; padding: 14px 24px; display: block; }
   .hero-vertical-text { display: none; }
-  .trust-badge { padding: 6px 16px; }
+  .trust-badge { padding: 6px 14px; }
   .trust-badge-label { font-size: 1rem; }
   .hero-content p.hero-desc { display: none; }
 }
 
 @media (max-width: 600px) {
-  .trust-badges { gap: 8px; justify-content: flex-start; }
-  .trust-badge { border-right: none; padding: 4px 12px; }
+  .trust-badges { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .trust-badge { border-right: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; flex-shrink: 0; }
+  .trust-badge:last-child { border-right: none; }
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 { font-size: 3.4rem; }
+  .hero-section { padding: 80px 0 70px; }
+  .hero-content h1 { font-size: 3.2rem; }
+  .hero-content p.hero-sub { font-size: 1.6rem; margin-bottom: 1.2rem; }
+  .trust-badge-icon { width: 28px; height: 28px; }
 }

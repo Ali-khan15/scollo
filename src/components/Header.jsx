@@ -62,7 +62,7 @@ const Header = () => {
           {/* Logo */}
           <div className="logo">
             <Link to="/">
-              <img src="/logo.png" alt="Scollo Framing and Finish" className="header-logo-img" />
+              <img src="/logo.png" alt="Scollo Construction" className="header-logo-img" />
             </Link>
           </div>
 
@@ -132,7 +132,7 @@ const Header = () => {
         <div className="search-overlay-inner">
           <input
             type="text"
-            placeholder="Search Scollo Framing and Finish..."
+            placeholder="Search Scollo Construction..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             autoFocus={searchOpen}

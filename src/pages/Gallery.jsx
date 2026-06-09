@@ -135,43 +135,113 @@ const SERVICE_SECTIONS = [
   },
 ];
 
+/* ── Responsive visible count ── */
+function useVisibleCount() {
+  const [visible, setVisible] = useState(() => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1100) return 2;
+    return 3;
+  });
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth <= 768) setVisible(1);
+      else if (window.innerWidth <= 1100) setVisible(2);
+      else setVisible(3);
+    };
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  return visible;
+}
+
 /* ── Service Slider Component ── */
 const ServiceSlider = ({ section }) => {
+  const VISIBLE = useVisibleCount();
   const [current, setCurrent] = useState(0);
-  const [animating, setAnimating] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
   const trackRef = useRef(null);
+  const touchStartX = useRef(null);
+  const touchCurrentX = useRef(null);
 
-  const VISIBLE = 3;
   const total = section.images.length;
   const maxIndex = Math.max(0, total - VISIBLE);
 
+  useEffect(() => {
+    setCurrent(prev => Math.min(prev, maxIndex));
+  }, [VISIBLE, maxIndex]);
+
   const go = (dir) => {
-    if (animating) return;
-    setAnimating(true);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setDragOffset(0);
     setCurrent(prev => {
       let next = prev + dir;
       if (next > maxIndex) next = 0;
       if (next < 0) next = maxIndex;
       return next;
     });
-    setTimeout(() => setAnimating(false), 600);
+    setTimeout(() => setIsTransitioning(false), 480);
   };
 
-  const [isPaused, setIsPaused] = useState(false);
-
+  // Auto-play
   useEffect(() => {
     if (isPaused || total <= VISIBLE) return;
-    const timer = setInterval(() => {
-      go(1);
-    }, 5000);
+    const timer = setInterval(() => go(1), 5000);
     return () => clearInterval(timer);
-  }, [maxIndex, animating, isPaused, total]);
+  }, [maxIndex, isTransitioning, isPaused, total, VISIBLE]);
 
-  const offset = -(current * (100 / VISIBLE));
+  // Touch — track live drag position for real-time feedback
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchCurrentX.current = e.touches[0].clientX;
+    setIsPaused(true);
+  };
+  const handleTouchMove = (e) => {
+    if (touchStartX.current === null) return;
+    touchCurrentX.current = e.touches[0].clientX;
+    const rawDiff = touchCurrentX.current - touchStartX.current;
+    // Resist dragging past edges
+    const atStart = current === 0 && rawDiff > 0;
+    const atEnd = current === maxIndex && rawDiff < 0;
+    setDragOffset(atStart || atEnd ? rawDiff * 0.2 : rawDiff);
+  };
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - (touchCurrentX.current ?? touchStartX.current);
+    if (Math.abs(diff) > 50) {
+      go(diff > 0 ? 1 : -1);
+    } else {
+      // Snap back
+      setIsTransitioning(true);
+      setDragOffset(0);
+      setTimeout(() => setIsTransitioning(false), 300);
+    }
+    touchStartX.current = null;
+    touchCurrentX.current = null;
+    setIsPaused(false);
+  };
+
+  const slideWidthPct = 100 / VISIBLE;
+  const baseOffset = -(current * slideWidthPct);
+  // Convert pixel drag to percentage of viewport
+  const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : 375;
+  const dragPct = (dragOffset / viewportWidth) * 100;
+  const totalOffset = baseOffset + dragPct;
+
+  const trackStyle = {
+    transform: `translate3d(${totalOffset}%, 0, 0)`,
+    transition: isTransitioning || dragOffset === 0
+      ? 'transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      : 'none',
+    willChange: 'transform',
+  };
 
   return (
-    <section 
-      className="gallery-service-section" 
+    <section
+      className="gallery-service-section"
       id={section.id}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -187,18 +257,22 @@ const ServiceSlider = ({ section }) => {
           <button
             className="slider-arrow"
             onClick={() => go(-1)}
-            disabled={total <= VISIBLE}
+            disabled={total <= VISIBLE || isTransitioning}
             aria-label="Previous"
           >
             <ArrowLeftIcon size={18} />
           </button>
           <span className="slider-count">
-            {total > 0 ? `${current + 1}–${Math.min(current + VISIBLE, total)} / ${total}` : '0 / 0'}
+            {total > 0
+              ? VISIBLE === 1
+                ? `${current + 1} / ${total}`
+                : `${current + 1}–${Math.min(current + VISIBLE, total)} / ${total}`
+              : '0 / 0'}
           </span>
           <button
             className="slider-arrow"
             onClick={() => go(1)}
-            disabled={total <= VISIBLE}
+            disabled={total <= VISIBLE || isTransitioning}
             aria-label="Next"
           >
             <ArrowRightIcon size={18} />
@@ -207,16 +281,22 @@ const ServiceSlider = ({ section }) => {
       </div>
 
       {/* Slider Track */}
-      <div className="gallery-slider-viewport">
+      <div
+        className="gallery-slider-viewport"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ touchAction: 'pan-y' }}
+      >
         {section.images.length > 0 ? (
           <div
             className="gallery-slider-track"
             ref={trackRef}
-            style={{ transform: `translateX(${offset}%)` }}
+            style={trackStyle}
           >
             {section.images.map((img, i) => (
               <div className="gallery-slide" key={i}>
-                <div 
+                <div
                   className="gallery-slide-img"
                   style={{ backgroundImage: `url(${img.url})` }}
                   aria-label={img.caption || 'Gallery Image'}
@@ -226,7 +306,7 @@ const ServiceSlider = ({ section }) => {
             ))}
           </div>
         ) : (
-          <div className="gallery-slide-img" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1a1a1a', height: '400px', borderRadius: '12px' }}>
+          <div className="gallery-slide-img" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1a1a1a', height: '320px' }}>
             <p style={{ color: '#fff', opacity: 0.7 }}>New project photos coming soon</p>
           </div>
         )}

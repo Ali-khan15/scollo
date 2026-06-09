@@ -17,8 +17,7 @@ const ContactModal = ({ open, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a production environment, this data would be sent to info@Scollopaintco.com
-    console.log('Sending form data to info@Scollopaintco.com:', form);
+    console.log('Sending form data:', form);
     setSent(true);
     setTimeout(() => { setSent(false); onClose(); setForm({ name: '', email: '', company: '', message: '' }); }, 2500);
   };
@@ -31,7 +30,7 @@ const ContactModal = ({ open, onClose }) => {
         {sent ? (
           <div className="contact-modal-success">
             <h2>Message Sent!</h2>
-            <p>Thank you for reaching out. A Scollo Framing and Finish team member will be in touch shortly.</p>
+            <p>Thank you for reaching out. A Scollo Construction team member will be in touch shortly.</p>
           </div>
         ) : (
           <>

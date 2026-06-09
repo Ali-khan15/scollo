@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import './Subpages.css';
+import './ContactUs.css';
 import { PhoneIcon, MailIcon, LocationIcon, ClockIcon, CheckCircleIcon, ArrowRightIcon } from '../components/Icons';
 
 const SERVICE_OPTIONS = [
-  'Painting',
-  'Sheetrock',
-  'Pressure Wash',
-  'Commercial',
-  'Residential',
-  'Epoxy Floors',
-  'Other / Multiple Services',
+  'Framing',
+  'Finishing',
+  'Backing',
+  'Sheathing',
+  'Trusses',
+  'Stucco',
+  'Insulation',
+  'Hanging',
+  'Multiple Services',
+  'Other',
 ];
 
 const ContactUs = () => {
@@ -27,7 +31,6 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Sending to info@Scollopaintco.com:', form);
     setSent(true);
     setTimeout(() => {
       setSent(false);
@@ -37,15 +40,56 @@ const ContactUs = () => {
 
   return (
     <div className="subpage-container">
-      {/* Hero */}
+
+      {/* ── Hero ── */}
       <div className="subpage-hero">
         <div className="container">
           <span className="eyebrow">Get in Touch</span>
-          <h1>Contact Us</h1>
-          <p>Have a project in mind or need a quote? Our team is ready to help.</p>
+          <h1>Contact <span className="grad-text">Scollo Construction</span></h1>
+          <p>
+            Ready to start your next project? Reach out directly to our team and
+            we'll get back to you as soon as possible.
+          </p>
         </div>
       </div>
 
+      {/* ── Owner / Founder Section ── */}
+      <section className="owner-section">
+        <div className="container">
+          <div className="owner-card">
+            <div className="owner-avatar">
+              <img src="/images/owner.png" alt="Michael Scollo — Founder & President" />
+            </div>
+            <div className="owner-info">
+              <span className="eyebrow">Meet the Founder</span>
+              <h2>Michael Scollo</h2>
+              <p className="owner-title">Founder &amp; President — Scollo Construction</p>
+              <p className="owner-bio">
+                At Scollo Construction, every project starts with a conversation. Whether you're
+                planning a residential build, commercial development, or government project across
+                Florida, Michael and his team are ready to help deliver results built on trust,
+                quality, and accountability.
+              </p>
+              <div className="owner-contacts">
+                <a href="tel:+15619063823" className="owner-contact-item">
+                  <span className="owner-contact-icon"><PhoneIcon size={16} /></span>
+                  <span>+1 (561) 906-3823</span>
+                </a>
+                <a href="mailto:info@scolloframing&finishing.com" className="owner-contact-item">
+                  <span className="owner-contact-icon"><MailIcon size={16} /></span>
+                  <span>info@scolloframing&amp;finishing.com</span>
+                </a>
+                <span className="owner-contact-item">
+                  <span className="owner-contact-icon"><LocationIcon size={16} /></span>
+                  <span>Florida, USA</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact Grid ── */}
       <div className="subpage-content">
         <div className="container">
           <div className="contact-grid">
@@ -55,22 +99,27 @@ const ContactUs = () => {
               <h2>Contact Information</h2>
 
               <div className="contact-item">
+                <h3 style={{ color: 'var(--text-primary)', fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Michael Scollo</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', marginTop: '2px' }}>Founder &amp; President</p>
+              </div>
+
+              <div className="contact-item">
                 <h3><PhoneIcon size={18} /> Phone</h3>
-                <p><a href="tel:+1XXXXXXXXXX">+1 XXX XXX XXXX</a></p>
+                <p><a href="tel:+15619063823">+1 (561) 906-3823</a></p>
               </div>
 
               <div className="contact-item">
                 <h3><MailIcon size={18} /> Email</h3>
                 <p>
-                  <a href="mailto:info@Scollopaintco.com">
-                    info@Scollopaintco.com
+                  <a href="mailto:info@scolloframing&finishing.com">
+                    info@scolloframing&amp;finishing.com
                   </a>
                 </p>
               </div>
 
               <div className="contact-item">
                 <h3><LocationIcon size={18} /> Location</h3>
-                <p>Your City / State Here</p>
+                <p>Florida, USA</p>
               </div>
 
               <div className="contact-item">
@@ -81,22 +130,25 @@ const ContactUs = () => {
 
               <div className="contact-closing">
                 <p>
-                  At Scollo Framing and Finish, we are committed to providing reliable service
-                  and quality results you can depend on.
+                  Scollo Construction is a Florida-born, family-owned company committed to
+                  delivering quality construction services with integrity and accountability
+                  on every project.
                 </p>
               </div>
             </div>
 
             {/* ── Right: Quote Form ── */}
             <div className="contact-form-wrap">
-              <h2>Request a Quote</h2>
+              <h2>Request a Consultation</h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', fontSize: '1.6rem' }}>
                 Fill out the form and we will get back to you as soon as possible.
               </p>
 
               {sent ? (
                 <div className="success-msg">
-                  <div style={{ marginBottom: '16px', color: 'var(--primary-gold)' }}><CheckCircleIcon size={64} /></div>
+                  <div style={{ marginBottom: '16px', color: 'var(--primary-gold)' }}>
+                    <CheckCircleIcon size={64} />
+                  </div>
                   <h2>Message Sent!</h2>
                   <p>Thank you for reaching out. We'll get back to you shortly.</p>
                 </div>
@@ -155,7 +207,7 @@ const ContactUs = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>Location / Project Address</label>
+                    <label>Project Location / Address</label>
                     <input
                       type="text"
                       name="location"

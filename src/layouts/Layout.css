@@ -149,7 +149,14 @@
 
 /* Responsive */
 @media (max-width: 600px) {
-  .contact-modal { padding: 40px 28px; }
+  .contact-modal { padding: 40px 20px; }
   .form-row { grid-template-columns: 1fr; }
-  .contact-modal-header h2 { font-size: 3.6rem; }
+  .contact-modal-header h2 { font-size: 3.2rem; }
+  .contact-modal-backdrop { padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  .contact-modal { padding: 36px 16px; max-height: 95vh; }
+  .contact-modal-header { margin-bottom: 28px; }
+  .contact-modal-header h2 { font-size: 2.8rem; }
 }

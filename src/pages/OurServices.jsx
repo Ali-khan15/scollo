@@ -69,7 +69,7 @@ const OurServices = () => (
         <span className="eyebrow">What We Do</span>
         <h1><span className="grad-text">Our Services</span></h1>
         <p>
-          At Scollo Framing and Finish, we deliver expert framing, finishing, and structural services —
+          At Scollo Construction, we deliver expert framing, finishing, and structural services —
           from trusses and sheathing to stucco, insulation, and drywall hanging.
         </p>
       </div>
