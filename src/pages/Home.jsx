@@ -58,11 +58,11 @@ function StatCounter({ value, suffix = '', label }) {
 
 /* ── Data ── */
 const PROJECTS = [
-  { cat: 'Framing',    title: 'Luxury Residential Framing',   loc: 'Jacksonville, FL',    img: '/images/img_62.jpeg', cls: 'p-card-1' },
-  { cat: 'Stucco',     title: 'Commercial Stucco Exterior',   loc: 'Miami, FL',           img: '/images/img_10.jpeg', cls: 'p-card-2' },
-  { cat: 'Sheathing',  title: 'Commercial Wall Sheathing',    loc: 'Tampa, FL',           img: '/images/img_43.jpeg', cls: 'p-card-3' },
-  { cat: 'Insulation', title: 'Residential Insulation',       loc: 'Orlando, FL',         img: '/images/img_20.jpeg', cls: 'p-card-4' },
-  { cat: 'Finishing',  title: 'Government Building Finishing', loc: 'Fort Lauderdale, FL', img: '/images/img_5.jpeg',  cls: 'p-card-5' },
+  { cat: 'Framing',    title: 'Luxury Residential Framing',    loc: 'Jacksonville, FL',    img: '/images/project_framing.jfif',    cls: 'p-card-1' },
+  { cat: 'Stucco',     title: 'Commercial Stucco Exterior',    loc: 'Miami, FL',           img: '/images/project_stucco.jfif',     cls: 'p-card-2' },
+  { cat: 'Sheathing',  title: 'Commercial Wall Sheathing',     loc: 'Tampa, FL',           img: '/images/project_sheathing.jfif',  cls: 'p-card-3' },
+  { cat: 'Insulation', title: 'Residential Insulation',        loc: 'Orlando, FL',         img: '/images/project_insulation.jfif', cls: 'p-card-4' },
+  { cat: 'Finishing',  title: 'Government Building Finishing', loc: 'Fort Lauderdale, FL', img: '/images/project_finishing.jfif',  cls: 'p-card-5' },
 ];
 
 const SERVICES = [
