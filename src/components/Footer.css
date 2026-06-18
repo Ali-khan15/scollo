@@ -6,6 +6,7 @@
   color: white;
   font-family: var(--font-body);
   margin-top: 100px;
+  overflow-x: hidden;
 }
 
 /* ── Gradient accent line at top ── */

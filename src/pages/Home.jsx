@@ -172,9 +172,7 @@ const Home = () => {
                 <div className="p-card-bg" style={{ backgroundImage: `url(${p.img})` }} />
                 <div className="p-card-overlay" />
                 <div className="p-card-info">
-                  <span className="p-card-cat">{p.cat}</span>
                   <div className="p-card-title">{p.title}</div>
-                  <div className="p-card-loc">{p.loc}</div>
                 </div>
               </Link>
             ))}
