@@ -80,14 +80,17 @@ const SERVICE_SECTIONS = [
     icon: TradeIcons.trusses,
     description: 'Engineered truss installation for strong, dependable structural performance.',
     images: [
-      { url: '/images/trusses_1.jpeg', caption: 'Truss Installation' },
-      { url: '/images/trusses_2.jpeg', caption: 'Roof Truss Structure' },
-      { url: '/images/trusses_3.jpeg', caption: 'Truss Framework' },
-      { url: '/images/trusses_4.jpeg', caption: 'Engineered Trusses' },
-      { url: '/images/trusses_5.jpeg', caption: 'Truss Detail' },
-      { url: '/images/trusses_6.jpeg', caption: 'Roof Structure' },
-      { url: '/images/trusses_7.jpeg', caption: 'Truss System' },
-      { url: '/images/trusses_8.jpeg', caption: 'Ceiling Joists' },
+      { url: '/images/trusses_1.jpeg',   caption: 'Truss Installation' },
+      { url: '/images/trusses_2.jpeg',   caption: 'Roof Truss Structure' },
+      { url: '/images/trusses_3.jpeg',   caption: 'Truss Framework' },
+      { url: '/images/trusses_4.jpeg',   caption: 'Engineered Trusses' },
+      { url: '/images/trusses_5.jpeg',   caption: 'Truss Detail' },
+      { url: '/images/trusses_6.jpeg',   caption: 'Roof Structure' },
+      { url: '/images/trusses_7.jpeg',   caption: 'Truss System' },
+      { url: '/images/trusses_8.jpeg',   caption: 'Ceiling Joists' },
+      { url: '/images/trusses_new_1.jfif', caption: 'Truss Update' },
+      { url: '/images/trusses_new_2.jfif', caption: 'Truss Gallery' },
+      { url: '/images/trusses_new_3.jfif', caption: 'Truss Gallery' },
     ],
   },
   {
@@ -112,9 +115,11 @@ const SERVICE_SECTIONS = [
     icon: TradeIcons.insulation,
     description: 'Energy-efficient insulation solutions for residential and commercial properties.',
     images: [
-      { url: '/images/img_20.jpeg', caption: 'Insulation Installation' },
-      { url: '/images/img_48.jpeg', caption: 'Wall Insulation' },
-      { url: '/images/img_5.jpeg',  caption: 'Commercial Insulation' },
+      { url: '/images/img_20.jpeg',          caption: 'Insulation Installation' },
+      { url: '/images/img_48.jpeg',          caption: 'Wall Insulation' },
+      { url: '/images/img_5.jpeg',           caption: 'Commercial Insulation' },
+      { url: '/images/insulation_new_1.jfif', caption: 'Insulation Detail' },
+      { url: '/images/insulation_new_2.jfif', caption: 'Insulation System' },
     ],
   },
   {
@@ -123,14 +128,11 @@ const SERVICE_SECTIONS = [
     icon: TradeIcons.hanging,
     description: 'Professional drywall and hanging services completed with precision and efficiency.',
     images: [
-      { url: '/images/hanging_1.jpeg', caption: 'Drywall Hanging' },
-      { url: '/images/hanging_2.jpeg', caption: 'Panel Installation' },
-      { url: '/images/hanging_3.jpeg', caption: 'Ceiling Hanging' },
-      { url: '/images/hanging_4.jpeg', caption: 'Sheetrock Detail' },
-      { url: '/images/hanging_5.jpeg', caption: 'Wall Hanging' },
-      { url: '/images/hanging_6.jpeg', caption: 'Commercial Hanging' },
-      { url: '/images/hanging_7.jpeg', caption: 'Precision Hanging' },
-      { url: '/images/hanging_8.jpeg', caption: 'Hanging Finish' },
+      { url: '/images/hanging_new_1.jfif', caption: 'Drywall Hanging' },
+      { url: '/images/hanging_new_2.jfif', caption: 'Panel Installation' },
+      { url: '/images/hanging_new_3.jfif', caption: 'Ceiling Hanging' },
+      { url: '/images/hanging_new_4.jfif', caption: 'Sheetrock Detail' },
+      { url: '/images/hanging_new_5.jfif', caption: 'Wall Hanging' },
     ],
   },
 ];
@@ -263,11 +265,7 @@ const ServiceSlider = ({ section }) => {
             <ArrowLeftIcon size={18} />
           </button>
           <span className="slider-count">
-            {total > 0
-              ? VISIBLE === 1
-                ? `${current + 1} / ${total}`
-                : `${current + 1}–${Math.min(current + VISIBLE, total)} / ${total}`
-              : '0 / 0'}
+            {total > 0 ? `${current + 1} / ${total}` : '0 / 0'}
           </span>
           <button
             className="slider-arrow"
