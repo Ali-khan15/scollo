@@ -62,7 +62,6 @@ const PROJECTS = [
   { cat: 'Stucco',     title: 'Commercial Stucco Exterior',    loc: 'Miami, FL',           img: '/images/home_stucco.png',       cls: 'p-card-2' },
   { cat: 'Sheathing',  title: 'Commercial Wall Sheathing',     loc: 'Tampa, FL',           img: '/images/home_sheathing.png',    cls: 'p-card-3' },
   { cat: 'Insulation', title: 'Residential Insulation',        loc: 'Orlando, FL',         img: '/images/home_insulation.png',   cls: 'p-card-4' },
-  { cat: 'Finishing',  title: 'Government Building Finishing', loc: 'Fort Lauderdale, FL', img: '/images/project_finishing.jfif', cls: 'p-card-5' },
 ];
 
 const SERVICES = [

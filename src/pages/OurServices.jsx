@@ -8,14 +8,14 @@ const services = [
     title: 'Framing',
     description:
       'Precision metal and wood framing for walls, ceilings, and structural systems — built for strength, speed, and long-term performance.',
-    image: '/images/framing_1.jpeg',
+    image: '/images/service_framing.jfif',
   },
   {
     icon: TradeIcons.finishing,
     title: 'Finishing',
     description:
       'Expert surface finishing including taping, mudding, sanding, and texturing to deliver smooth, paint-ready walls and ceilings.',
-    image: '/images/img_26.jpeg',
+    image: '/images/service_finishing.jfif',
   },
   {
     icon: TradeIcons.backing,
@@ -29,35 +29,35 @@ const services = [
     title: 'Sheathing',
     description:
       'Exterior wall and roof sheathing installation using OSB and plywood panels for a strong, weather-resistant building envelope.',
-    image: '/images/sheathingservice.png',
+    image: '/images/service_sheathing.jfif',
   },
   {
     icon: TradeIcons.trusses,
     title: 'Trusses',
     description:
       'Professional roof and floor truss installation ensuring structural integrity, proper load distribution, and code compliance.',
-    image: '/images/trusses_1.jpeg',
+    image: '/images/service_trusses.jfif',
   },
   {
     icon: TradeIcons.stucco,
     title: 'Stucco',
     description:
       'Interior and exterior stucco application delivering durable, textured, and visually appealing finishes for any surface.',
-    image: '/images/stuccoservice.png',
+    image: '/images/service_stucco.jfif',
   },
   {
     icon: TradeIcons.insulation,
     title: 'Insulation',
     description:
       'High-performance insulation installation for walls, ceilings, and floors — improving energy efficiency and acoustic comfort.',
-    image: '/images/img_20.jpeg',
+    image: '/images/service_insulation.jfif',
   },
   {
     icon: TradeIcons.hanging,
     title: 'Hanging',
     description:
       'Precise drywall hanging and sheetrock installation for residential and commercial projects, ready for finishing.',
-    image: '/images/hanging_1.jpeg',
+    image: '/images/service_hanging.jfif',
   },
 ];
 
