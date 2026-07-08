@@ -299,7 +299,6 @@ const ServiceSlider = ({ section }) => {
                   style={{ backgroundImage: `url(${img.url})` }}
                   aria-label={img.caption || 'Gallery Image'}
                 />
-                <div className="gallery-slide-caption">{img.caption}</div>
               </div>
             ))}
           </div>
